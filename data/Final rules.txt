@@ -1,0 +1,61 @@
+Final rules:
+
+Model P1-XOR:
+
+Constraint 1. 
+LTL formula:  (G (activity_g -> (X (! activity_g U activity_h)))) && ((!activity_r) WU activity_s) 
+Declare constraints: alternate response (activity_g,activity_h); precedence(activity_s,activity_r)
+Characteristics: Alt. response AND->AND and Precedence AND->AND
+
+Constraint 2. 
+LTL formula: ((!activity_g) WU activity_h) && (G (activity_g -> X (!activity_g WU activity_h))) && (G ((activity_ag) -> (F (activity_ah)))) 
+Declare constraints: alternate precedence (activity_h,activity_g); response(activity_ag,activity_ah)
+Characteristics: Alt. precedence AND->AND and Response XOR->XOR
+
+Constraint 3. 
+LTL formula: ((!activity_ae) WU activity_c) && (G (activity_ae -> X ((!activity_ae) WU activity_c))) && (G (activity_h -> (F activity_g))) && (!(F (activity_y))) 
+Declare constraints: alternate precedence (activity_c,activity_ae) ; response(activity_h,activity_g); non-existence(activity_y)
+Characteristics: Alt. Precedence (XOR->XOR) and Response (AND->AND) and Non-existence
+
+Constraint 4. 
+LTL formula: ((!activity_ae) WU activity_c) && (G (activity_h -> (F activity_g))) && ((G (activity_r -> (F activity_s)))) 
+Declare constraints: precedence(activity_c,activity_ae)); response(activity_h, activity_g); response(activity_r, activity_s)
+Characteristics: Precedence (XOR->XOR) and Response (AND->AND) and Response (AND->AND)
+
+Model P2-AND:
+
+Constraint 1. 
+LTL formula: (G (activity_d -> (F activity_o))) && (G (activity_k -> (F activity_s))) 
+Declare constraints: response(activity_d,activity_o); response(activity_k,activity_s)
+Characteristics: Response AND->AND and Response XOR->AND .
+
+Constraint 2. 
+LTL formula: (G (activity_g -> (F activity_q))) && ((! activity_t) WU activity_m) && (!(F (activity_l))) 
+Declare constraints: response(activity_g,activity_q); precedence(activity_m,activity_t)); non-existence(activity_l)
+Characteristics: Response XOR->XOR and Precedence XOR->AND and Non-existence
+
+Constraint 3. 
+LTL formula: (G (activity_g -> (F activity_o))) && (!(F (activity_e))) && ((! activity_m) WU activity_v) 
+Declare constraints: response(activity_g,activity_o); non-existence(activity_e); precedence(activity_v,activity_m)
+Characteristics: Response XOR->AND and Non-existence and Precedence AND->XOR
+
+Constraint 4. 
+LTL formula: ((G (activity_k -> (F activity_s))) && (G (activity_d -> (X (! activity_d U activity_r)))) && ((! activity_g) WU activity_o) 
+Declare constraints: response(activity_k,activity_s); alternate response(activity_d, activity_r); precedence(activity_o,activity_g)
+Characteristics: Response AND->AND and Alt. Response AND->AND and Precedence AND->XOR
+
+Model P3-Loop
+
+Constraint 1. 
+LTL formula: ((!activity_f) WU activity_h)
+Declare constraints: precedence(activity_h,activity_f)
+
+Constraint 2. 
+LTL formula: (G (activity_k -> (F activity_j)))
+Declare constraints: response(activity_k,activity_j)
+
+Constraint 3. 
+LTL formula: (G (activity_g -> (X (! activity_g U activity_b))))
+Declare constraints: alternate response (activity_g,activity_b)
+
+
