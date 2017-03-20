@@ -1,0 +1,37 @@
+Final rules:
+
+Model 1 (Medium XOR):
+
+1. (G (activity_g -> (X (! activity_g U activity_h)))) && ((!activity_r) WU activity_s) 
+Alt. response AND->AND and Precedence AND->AND
+
+2. ((!activity_g) WU activity_h) && (G (activity_g -> X (!activity_g WU activity_h))) && (G ((activity_ag) -> (F (activity_ah)))) 
+Alt. precedence AND->AND and Response XOR->XOR
+
+3. ((!activity_ae) WU activity_c) && (G (activity_ae -> X ((!activity_ae) WU activity_c))) && (G (activity_h -> (F activity_g))) && (!(F (activity_y))) 
+Alt. Precedence (XOR->XOR) and Response (AND->AND) and Non-existence
+
+4. ((!activity_ae) WU activity_c) && (G (activity_h -> (F activity_g))) && ((G (activity_r -> (F activity_s)))) 
+Precedence (XOR->XOR) and Response (AND->AND) and Response (AND->AND)
+
+Model 2 (Medium AND):
+
+1. (G (activity_d -> (F activity_o))) && (G (activity_k -> (F activity_s))) 
+Response AND->AND and Response XOR->AND .
+
+2. (G (activity_g -> (F activity_q))) && ((! activity_t) WU activity_m) && (!(F (activity_l))) 
+Response XOR->XOR and Precedence XOR->AND and Non-existence
+
+3. (G (activity_g -> (F activity_o))) && (!(F (activity_e))) && ((! activity_m) WU activity_v) 
+Response XOR->AND and Non-existence and Precedence AND->XOR
+
+4. ((G (activity_k -> (F activity_s))) && (G (activity_d -> (X (! activity_d U activity_r)))) && ((! activity_g) WU activity_o) 
+Response AND->AND and Alt. Response AND->AND and Precedence AND->XOR
+
+Model 3 (Loop):
+
+1. ((!activity_f) WU activity_h)
+
+2. (G (activity_k -> (F activity_j)))
+
+3. (G (activity_g -> (X (! activity_g U activity_b))))
